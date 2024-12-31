@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Append to Text File</title>
     <style>
-        *{
+        * {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        body{
+
+        body {
             background-color: #BBB;
             text-align: center;
         }
-        textarea{
+
+        textarea {
             font-size: larger;
             width: 80%;
             margin: 0 auto;
             padding: 10px;
             height: 30vh;
         }
-        button{
+
+        button {
             padding: 5px;
             font-size: large;
             background-color: green;
@@ -30,28 +34,54 @@
             display: inline-block;
             text-align: center;
             margin: 5px;
+            cursor: pointer;
         }
-        button:hover{
+
+        button:hover {
             background-color: lightgreen;
             color: black;
         }
-        button[type=reset]{
+
+        button[type=reset] {
             background-color: red;
             color: white;
         }
-        button[type=reset]:hover{
+
+        button[type=reset]:hover {
             background-color: rgb(255, 147, 24);
             color: black;
         }
+        button[type=button] {
+            background-color: #48A;
+            color: white;
+            min-width: auto;
+            width: 40%;
+            max-width: 400px;
+        }
+
+        button[type=button]:hover {
+            background-color: #7DF;
+            color: black;
+        }
     </style>
+    <script>
+        async function paste(target) {
+            const text = await navigator.clipboard.readText();
+            target.value = text;
+        }
+    </script>
 </head>
+
 <body>
     <h1>Append to Text File</h1>
     <form action="/" method="POST">
-        <textarea id="textInput" name="textInputProblem" required placeholder="Enter Problem"></textarea><br>
-        <textarea id="textInput" name="textInputSolution" required placeholder="Enter Solution"></textarea><br>
+        <button type="button" onclick="paste(document.getElementById('textInputProblem'))">Paste Problem</button>
+        <button type="button" onclick="paste(document.getElementById('textInputSolution'))">Paste Solution</button>
+        <textarea id="textInputProblem" name="textInputProblem" required placeholder="Enter Problem"></textarea><br>
+        <textarea id="textInputSolution" name="textInputSolution" required placeholder="Enter Solution"></textarea><br>
         <button type="submit">Submit</button><br>
         <button type="reset">Clear</button>
     </form>
 </body>
+
 </html>

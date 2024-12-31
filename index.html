@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Append to Text File</title>
+    <style>
+        *{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body{
+            background-color: #BBB;
+            text-align: center;
+        }
+        textarea{
+            font-size: larger;
+            width: 80%;
+            margin: 0 auto;
+            padding: 10px;
+            height: 30vh;
+        }
+        button{
+            padding: 5px;
+            font-size: large;
+            background-color: green;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            min-width: 50%;
+            display: inline-block;
+            text-align: center;
+            margin: 5px;
+        }
+        button:hover{
+            background-color: lightgreen;
+            color: black;
+        }
+        button[type=reset]{
+            background-color: red;
+            color: white;
+        }
+        button[type=reset]:hover{
+            background-color: rgb(255, 147, 24);
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Append to Text File</h1>
+    <form action="/" method="POST">
+        <textarea id="textInput" name="textInputProblem" required placeholder="Enter Problem"></textarea><br>
+        <textarea id="textInput" name="textInputSolution" required placeholder="Enter Solution"></textarea><br>
+        <button type="submit">Submit</button><br>
+        <button type="reset">Clear</button>
+    </form>
+</body>
+</html>

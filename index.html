@@ -51,17 +51,21 @@
             background-color: rgb(255, 147, 24);
             color: black;
         }
+
         button[type=button] {
             background-color: #48A;
             color: white;
-            min-width: auto;
-            width: 40%;
-            max-width: 400px;
         }
 
         button[type=button]:hover {
             background-color: #7DF;
             color: black;
+        }
+        form{
+            display: grid;
+            width: 100%;
+            height: 100%;
+            grid-template-columns: auto auto;
         }
     </style>
     <script>
@@ -75,12 +79,19 @@
 <body>
     <h1>Append to Text File</h1>
     <form action="/" method="POST">
-        <button type="button" onclick="paste(document.getElementById('textInputProblem'))">Paste Problem</button>
-        <button type="button" onclick="paste(document.getElementById('textInputSolution'))">Paste Solution</button>
-        <textarea id="textInputProblem" name="textInputProblem" required placeholder="Enter Problem"></textarea><br>
-        <textarea id="textInputSolution" name="textInputSolution" required placeholder="Enter Solution"></textarea><br>
-        <button type="submit">Submit</button><br>
-        <button type="reset">Clear</button>
+        <div>
+            <button type="button" onclick="paste(document.getElementById('textInputProblem'))">Paste
+                Problem</button><br>
+            <button type="button" onclick="paste(document.getElementById('textInputSolution'))">Paste
+                Solution</button><br>
+            <button type="submit">Submit</button><br>
+            <button type="reset">Clear</button><br>
+        </div>
+        <div>
+            <textarea id="textInputProblem" name="textInputProblem" required placeholder="Enter Problem"></textarea><br>
+            <textarea id="textInputSolution" name="textInputSolution" required
+                placeholder="Enter Solution"></textarea><br>
+        </div>
     </form>
 </body>
 
